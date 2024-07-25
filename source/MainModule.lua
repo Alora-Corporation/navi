@@ -26,8 +26,7 @@ function Navi:translateToCommand(textToTranslate:string):string
 	local lowerText = textToTranslate:lower()
 
 	-- Remove common prefixes
-	local prefixes = {"navi, ", "navi ", "hey navi, ", "hey navi ", "hey,", "hi navi, ", "hi ", "hi, ", "hi. "}
-	for _, prefix in ipairs(prefixes) do
+	for _, prefix in ipairs(Training.Prefixes) do
 		if lowerText:sub(1, #prefix) == prefix then
 			lowerText = lowerText:sub(#prefix + 1)
 			break
